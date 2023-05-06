@@ -14,6 +14,7 @@ ENV TZ=Asia/Kolkata
 
 # Set the PATH environment variable with the encoded string
 ENV PATH=f"/home/{$(echo 'dXNlcmJvdA==' | base64 -d)}/bin:$PATH"
+RUN echo $PATH
 
 # Set the default command to run when the Docker container starts
 CMD ["python3", "-m", f"{$(echo 'dXNlcmJvdA==' | base64 -d)}"]
