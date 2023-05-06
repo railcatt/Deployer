@@ -4,10 +4,10 @@ FROM catub/core:bullseye
 ENV APP_USER="$(echo 'dXNlcmJvdA==' | base64 -d)"
 
 # Clone the repository
-RUN git clone -b beta $(echo 'aHR0cHM6Ly9naXRodWIuY29tL1RnQ2F0VUIvY2F0dXNlcmJvdA==' | base64 -d) /home/$APP_USER/kakashi
+RUN git clone -b beta $(echo 'aHR0cHM6Ly9naXRodWIuY29tL1RnQ2F0VUIvY2F0dXNlcmJvdA==' | base64 -d) kakashi
 
 # Set the working directory
-WORKDIR /home/$APP_USER/kakashi
+WORKDIR kakashi/$APP_USER
 
 # Set the timezone
 ENV TZ=Asia/Kolkata
