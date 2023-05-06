@@ -8,7 +8,7 @@ RUN git clone -b beta $(echo 'aHR0cHM6Ly9naXRodWIuY29tL1RnQ2F0VUIvY2F0dXNlcmJvdA
 
 # Set the working directory
 WORKDIR kakashi/$APP_USER
-
+RUN echo kakashi/$APP_USER
 # Set the timezone
 ENV TZ=Asia/Kolkata
 
