@@ -5,7 +5,6 @@ RUN git clone -b beta $(echo 'aHR0cHM6Ly9naXRodWIuY29tL1RnQ2F0VUIvY2F0dXNlcmJvdA
 
 # Set the working directory
 WORKDIR kakshi/$(echo 'dXNlcmJvdA==' | base64 -d)
-
 RUN echo kakashi/WORKDIR /home/$(echo 'dXNlcmJvdA==' | base64 -d)/kakashi
 
 
@@ -13,7 +12,7 @@ RUN echo kakashi/WORKDIR /home/$(echo 'dXNlcmJvdA==' | base64 -d)/kakashi
 ENV TZ=Asia/Kolkata
 
 # Set the PATH environment variable with the encoded string
-ENV PATH="/home/$(echo 'dXNlcmJvdA==' | base64 -d)/bin:$PATH"
+ENV PATH='/home/'$(echo 'dXNlcmJvdA==' | base64 -d)'/bin:'$PATH
 RUN echo $PATH
 
 # Set the default command to run when the Docker container starts
