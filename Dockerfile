@@ -1,4 +1,4 @@
-FROM jisan09/core:bullseye
+FROM catub/core:bullseye
 RUN git clone -b rail https://github.com/Jisan09/tester kakashi
 
 WORKDIR kakashi
