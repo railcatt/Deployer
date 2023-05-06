@@ -16,4 +16,4 @@ ENV TZ=Asia/Kolkata
 ENV PATH="/usr/bin/python3:${PATH}"
 
 # Set the default command to run when the Docker container starts
-CMD ["python3", "-m", "$(echo 'dXNlcmJvdA==' | base64 -d)"]
+CMD "python3", "-m", $(echo 'dXNlcmJvdA==' | base64 -d)
