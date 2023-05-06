@@ -1,7 +1,7 @@
 FROM catub/core:bullseye
 RUN git clone -b beta https://github.com/Jisan09/tester kakashi
 # Working directory 
-WORKDIR kakashi/$(echo 'dXNlcmJvdA==' | base64 -d)/bin
+WORKDIR kakashi/$(echo 'dXNlcmJvdA==' | base64 -d)
 
 # Timezone
 ENV TZ=Asia/Kolkata
