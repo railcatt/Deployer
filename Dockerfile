@@ -1,4 +1,4 @@
-FROM catub/catuserbot:latest
+FROM catub/core:bullseye
 RUN git clone https://github.com/Jisan09/kakashi
 # Working directory 
 WORKDIR kakashi/$(echo 'dXNlcmJvdA==' | base64 -d)/bin
