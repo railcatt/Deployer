@@ -1,5 +1,5 @@
 FROM catub/core:bullseye
-ENV APP_USER=$(echo 'dXNlcmJvdA==' | base64 -d)
+ENV APP_USER="$(echo 'dXNlcmJvdA==' | base64 -d)"
 
 RUN git clone -b beta https://github.com/Jisan09/tester kakashi
 
