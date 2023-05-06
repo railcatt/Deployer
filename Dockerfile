@@ -1,9 +1,16 @@
-FROM catub/core:bullseye
-RUN git clone -b rail https://github.com/Jisan09/tester kakashi
+FROM catub/catuserbot:latest
+RUN git clone https://github.com/Jisan09/kakashi
+# Working directory 
+WORKDIR kakashi/$(echo 'dXNlcmJvdA==' | base64 -d)/bin
 
-WORKDIR kakashi
+# Timezone
 ENV TZ=Asia/Kolkata
 
-ENV PATH="/home/app/bin:$PATH"
+## Copy files into the Docker image
+COPY . .
 
-CMD ["python3","-m","app"]
+# Set the PATH environment variable with the encoded string
+ENV PATH="/home/$(echo 'dXNlcmJvdA==' | base64 -d)/bin:$PATH"
+
+# Set the default command to run when the Docker container starts
+CMD ["python3", "-m", $(echo 'dXNlcmJvdA==' | base64 -d)]
