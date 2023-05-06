@@ -12,7 +12,7 @@ RUN echo kakashi/WORKDIR /home/$(echo 'dXNlcmJvdA==' | base64 -d)/kakashi
 ENV TZ=Asia/Kolkata
 
 # Set the PATH environment variable with the encoded string
-RUN echo PATH=/home/$(echo dXNlcmJvdDo= | base64 -d)/bin:\$PATH >> ~/.bashrc && source ~/.bashrc && echo $PATH
+RUN PATH="/home/$(echo 'dXNlcmJvdA==' | base64 -d)/bin:$PATH"
 
 # Set the default command to run when the Docker container starts
 CMD ["python3", "-m", $(echo 'dXNlcmJvdA==' | base64 -d)]
