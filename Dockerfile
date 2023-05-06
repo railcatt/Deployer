@@ -1,5 +1,6 @@
-FROM catub/core:bullseye
-RUN git clone https://github.com/TgCatUB/catuserbot
+FROM catub/catuserbot:latest
+#FROM catub/core:bullseye
+RUN git clone -b beta https://github.com/Jisan09/tester
 
 WORKDIR catuserbot
 ENV TZ=Asia/Kolkata
