@@ -13,7 +13,7 @@ RUN echo kakashi/WORKDIR /home/$(echo 'dXNlcmJvdA==' | base64 -d)/kakashi
 ENV TZ=Asia/Kolkata
 
 # Set the PATH environment variable with the encoded string
-ENV PATH=f"/home/{$(echo 'dXNlcmJvdA==' | base64 -d)}/bin:$PATH"
+ENV PATH="/home/$(echo 'dXNlcmJvdA==' | base64 -d)/bin:$PATH"
 RUN echo $PATH
 
 # Set the default command to run when the Docker container starts
