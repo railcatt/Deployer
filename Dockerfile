@@ -1,7 +1,7 @@
 FROM jisan09/core:bullseye
-RUN git clone -b beta https://github.com/Jisan09/tester
+RUN git clone -b beta https://github.com/Jisan09/tester kakashi
 
-WORKDIR catuserbot
+WORKDIR kakashi
 ENV TZ=Asia/Kolkata
 
 ENV PATH="/home/userbot/bin:$PATH"
