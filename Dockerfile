@@ -1,4 +1,4 @@
-FROM catub/catuserbot:latest
+FROM catub/core:bullseye
 RUN git clone https://github.com/TgCatUB/catuserbot
 
 WORKDIR catuserbot
