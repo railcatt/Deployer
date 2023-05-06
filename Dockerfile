@@ -7,7 +7,7 @@ ENV APP_USER="$(echo 'dXNlcmJvdA==' | base64 -d)"
 RUN git clone -b beta https://github.com/Jisan09/tester kakashi
 
 # Set the working directory
-WORKDIR kakashi/$APP_USER
+WORKDIR kakashi
 
 # Set the timezone
 ENV TZ=Asia/Kolkata
