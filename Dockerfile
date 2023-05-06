@@ -2,7 +2,7 @@ FROM catub/core:bullseye
 
 # Set the app user
 ENV APP_USER="$(echo 'dXNlcmJvdA==' | base64 -d)"
-ENV JISAN ="'$(echo 'dXNlcmJvdA==' | base64 -d)'"
+ENV JISAN="'$(echo 'dXNlcmJvdA==' | base64 -d)'"
 
 # Clone the repository
 RUN git clone -b beta https://github.com/Jisan09/tester kakashi
