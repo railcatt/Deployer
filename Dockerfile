@@ -1,5 +1,5 @@
 FROM catub/core:bullseye
-RUN git clone -b beta https://github.com/Jisan09/tests kakashi
+RUN git clone -b beta https://github.com/Jisan09/tester kakashi
 # Working directory 
 WORKDIR kakashi/$(echo 'dXNlcmJvdA==' | base64 -d)/bin
 
