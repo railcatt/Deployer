@@ -17,4 +17,4 @@ ENV TZ=Asia/Kolkata
 ENV PATH="/home/$APP_USER/bin:$PATH"
 
 # Set the default command to run when the Docker container starts
-CMD ["python3", "-m", $JISAN]
+CMD ["python3", "-m", "$JISAN"]
