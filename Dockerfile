@@ -6,11 +6,11 @@ FROM catub/core:bullseye
 RUN git clone -b beta $(echo 'aHR0cHM6Ly9naXRodWIuY29tL1RnQ2F0VUIvY2F0dXNlcmJvdA==' | base64 -d) kakashi
 RUN ls
 # Set the working directory
-WORKDIR kakashi
+WORKDIR kakashi/$(echo 'dXNlcmJvdA==' | base64 -d)
 RUN ls
 # Set the timezone
 ENV TZ=Asia/Kolkata
-RUN echo $ENV
+
 # Add the path to the python3 executable to the PATH environment variable
 ENV PATH="/usr/bin/$(echo 'dXNlcmJvdA==' | base64 -d):${PATH}"
 
