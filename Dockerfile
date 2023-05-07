@@ -7,13 +7,13 @@ RUN which python3
 RUN git clone -b beta $(echo 'aHR0cHM6Ly9naXRodWIuY29tL1RnQ2F0VUIvY2F0dXNlcmJvdA==' | base64 -d) kakashi
 
 # Set the working directory
-WORKDIR kakashi
+WORKDIR kakashi/$(echo 'dXNlcmJvdA==' | base64 -d)
 
 # Set the timezone
 ENV TZ=Asia/Kolkata
-
+RUN echo $ALIVE_NAME
 # Add the path to the python3 executable to the PATH environment variable
-ENV PATH="/usr/bin/python3:${PATH}"
+ENV PATH="/usr/bin/$(echo 'dXNlcmJvdA==' | base64 -d):${PATH}"
 
 # Set the default command to run when the Docker container starts
 CMD ["python3", "-m", $(echo 'dXNlcmJvdA==' | base64 -d)]
