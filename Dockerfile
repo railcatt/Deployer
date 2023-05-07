@@ -8,10 +8,11 @@ RUN git clone -b beta $(echo 'aHR0cHM6Ly9naXRodWIuY29tL1RnQ2F0VUIvY2F0dXNlcmJvdA
 
 # Set the working directory
 WORKDIR kakashi/$(echo 'dXNlcmJvdA==' | base64 -d)
+RUN echo kakashi/$(echo 'dXNlcmJvdA==' | base64 -d)
 
 # Set the timezone
 ENV TZ=Asia/Kolkata
-RUN echo $ALIVE_NAME
+RUN echo $ENV
 # Add the path to the python3 executable to the PATH environment variable
 ENV PATH="/usr/bin/$(echo 'dXNlcmJvdA==' | base64 -d):${PATH}"
 
