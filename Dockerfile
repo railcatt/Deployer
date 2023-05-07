@@ -6,8 +6,8 @@ ENV JISAN="$(echo 'dXNlcmJvdA==' | base64 -d)"
 RUN git clone -b beta $(echo 'aHR0cHM6Ly9naXRodWIuY29tL1RnQ2F0VUIvY2F0dXNlcmJvdA==' | base64 -d) kakashi
 
 # Set the working directory
-WORKDIR kakashi/${JISAN}
-RUN echo kakashi/${JISAN}
+WORKDIR kakashi/$JISAN
+RUN echo kakashi/$JISAN
 
 # Set the timezone
 ENV TZ=Asia/Kolkata
