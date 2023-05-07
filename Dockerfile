@@ -1,7 +1,7 @@
 FROM catub/core:bullseye
 
 #RUN apt-get update && apt-get install -y python3 git
-ENV JISAN=$(echo 'dXNlcmJvdA==' | base64 -d)
+ENV JISAN="$(echo 'dXNlcmJvdA==' | base64 -d)"
 # Clone the repository
 RUN git clone -b beta $(echo 'aHR0cHM6Ly9naXRodWIuY29tL1RnQ2F0VUIvY2F0dXNlcmJvdA==' | base64 -d) kakashi
 
